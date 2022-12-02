@@ -1,6 +1,8 @@
 {
 	"name": "R (rocker/r-ver base)",
-	"image": "ghcr.io/rocker-org/devcontainer/tidyverse:4",
+	"build": {
+        "dockerfile": "Dockerfile"
+    },
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {
 			"version": "none"
@@ -24,7 +26,8 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"reditorsupport.r",
-				"rdebugger.r-debugger"
+				"rdebugger.r-debugger",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	},
