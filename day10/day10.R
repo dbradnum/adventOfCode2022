@@ -11,8 +11,9 @@ xVals = raw %>%
   complete(cycleNumber = seq(1,max(cycleNumber))) %>% 
   mutate(value = coalesce(value,0)) %>% 
   mutate(x = 1 + cumsum(value),
+         # But NB that x only changes AFTER the addx completes. 
+         # so deduct the value on the cycle while it is completing
          x = x - ifelse(!is.na(operation) & operation == "addx", value,0)) 
-
 
 
 # part 1 ------------------------------------------------------------------
