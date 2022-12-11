@@ -1,5 +1,6 @@
 library(tidyverse)
 library(rlang)
+library(integer64)
 
 raw = read_lines("day11/day11.txt")
 nBlocks = ceiling(length(raw)/7)
